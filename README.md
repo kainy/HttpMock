@@ -12,7 +12,7 @@
 一, **打包好的Windows EXE**: [v0.2.2release](http://pan.baidu.com/s/107of0)  
 二, **开发**  
 1. 下载HttpMock的运行环境[node-webkit压缩包](https://s3.amazonaws.com/node-webkit/v0.7.5/node-webkit-v0.7.5-win-ia32.zip)并解压  
-2. 下载源代码并解压到运行环境目录（与nw.exe同级）  
+2. 下载源代码并解压到运行环境目录（与nw.exe同级），进入 HttpMock-master 目录，运行npm install  
 3. 将步骤2 解压得到的目录 HttpMock-master 拖放到 nw.exe 文件即可运行  
 4. 打包等更详细的开发文档,请看[node-webkit的WIKI](https://github.com/rogerwang/node-webkit)
 
