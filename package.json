@@ -2,16 +2,17 @@
   "name": "HTTPMOCK",
   "version": "0.2.2-release",
   "description": "a webserver for frontend developer.accept http proxy and log.",
-  "main": "index.html",
   "directories": {
-    "test": "test"
+    "test": "no"
   },
   "dependencies": {
-    "iconv-lite": "~0.2.11",
-    "js-beautify": "~1.4.0",
-    "http-proxy": "~0.10.3"
+    
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-node-webkit-builder": "~0.1.14",
+    "load-grunt-tasks": "~0.1.0"
+  },
   "scripts": {
     "test": "no"
   },
@@ -20,16 +21,5 @@
     "proxy"
   ],
   "author": "benqy",
-  "license": "WTFPL",
-  "window": {
-    "title": "HttpMock",
-    "icon": "img/logo.png",
-    "toolbar": false,
-    "frame": false,
-    "width": 1200,
-    "height": 700,
-    "position": "center",
-    "min_width": 1200,
-    "min_height": 700
-  }
+  "license": "WTFPL"
 }

@@ -1,1 +1,8 @@
-node_modules/
+.idea
+node_modules
+npm-debug.log
+tmp
+app/node_modules
+app/node-webkit.app
+build/cache
+build/releases

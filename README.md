@@ -11,11 +11,23 @@
 ###启动软件  
 一, **打包好的Windows EXE**: [v0.2.2release](http://pan.baidu.com/s/107of0)  
 二, **开发**  
-1. 下载HttpMock的运行环境[node-webkit压缩包](https://s3.amazonaws.com/node-webkit/v0.7.5/node-webkit-v0.7.5-win-ia32.zip)并解压  
-2. 下载源代码并解压到运行环境目录（与nw.exe同级），进入 HttpMock-master 目录，运行npm install  
-3. 将步骤2 解压得到的目录 HttpMock-master 拖放到 nw.exe 文件即可运行  
-4. 打包等更详细的开发文档,请看[node-webkit的WIKI](https://github.com/rogerwang/node-webkit)
+1. 下载源代码  
+2. 下载[node-webkit压缩包](https://github.com/rogerwang/node-webkit)  
+3. 解压node-webkit到项目根目录  
+4. 进入app文件夹,运行npm install  
+5. 返回根目录双击nw.exe即可  
+6. 打包等更详细的开发文档,请看[node-webkit的WIKI](https://github.com/rogerwang/node-webkit)
 
+###自动打包发布
+1. 打包之前,请确保上一步(开发)操作完成.应用可以运行
+2. 用[grunt-node-webkit-builder](https://github.com/mllrsohn/grunt-node-webkit-builder)打包多平台应用程序，进入根目录
+
+	```
+	$ npm install
+	$ grunt build
+	```
+部署的应用程序会生成到/build/releases下，详细配置见 Gruntfile.js
+	
 
 ###创建http服务  
 mock:即站点,每次只能有一个mock处于启动状态(这设定貌似不合理?但是我目前够用)  
