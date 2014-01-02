@@ -1,0 +1,63 @@
+﻿<div style="padding: 5px 20px 35px 20px; width: calc(100% - 40px);">
+    <div>
+        <div class="input-append">
+            <input ng-model="newGroupName" placeholder="添加host分组" ng-keydown="addGroup($event,newGroupName)" type="text">
+
+            <a class="btn " href="javascript://" ng-click="reload()">重新读取host</a>
+            <a class="btn " href="javascript://" ng-click="save(groups,groupNames)">保存</a>
+        </div>
+        <span class="alert" ng-show="hasUnSaveChange">
+            <strong>注意!</strong> 改动尚未保存!
+        </span>
+    </div>
+    <div ng-repeat="group in groups| toArray | orderBy:order" class="hostgroup">
+        <form name="hostgroups">
+            <table class="table table-condensed" markfortest="routelist">
+                <caption>
+                    <span class="label label-info">
+                        {{group.name}}
+                        <input ng-change="groupNameChange(group)" autofocus ng-show="group.inEdit"  type="text" name="group.name"  ng-model="group.name" required>
+                    </span>
+                    <div class="btn-group">
+                        <a href="javascript://" ng-click="add(group)" title="添加host" class="btn btn-mini"><i class="icon-plus "></i></a>
+                        <a href="javascript://" ng-show="group.name!='未分组'" ng-click="editGroup(group)" title="修改分组名称" class="btn btn-mini"><i class="icon-edit"></i></a>
+                        <a href="javascript://" ng-show="group.name!='未分组'" ng-click="removeGroup(groups,group)" title="删除分组" class="btn  btn-mini"><i class="icon-trash"></i></a>
+                    </div>
+                </caption>
+                <thead >
+                    <tr class="info">
+                        <th>#</th>
+                        <th>启用</th>
+                        <th>ip</th>
+                        <th>域名</th>
+                        <th>分组</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="info" ng-repeat="host in group.hosts">
+                        <td>{{$index+1}}</td>
+                        <td>
+                            <input ng-change="unSave()" style="margin: 0;" type="checkbox" name="effective" ng-model="host.effective">
+                        </td>
+                        <td>
+                            <input ng-change="unSave()" style="margin: 0;" type="text" name="ip" placeholder="ip"  ng-model="host.ip" required>
+                        </td>
+                        <td>
+                            <input ng-change="unSave()" style="margin: 0;" type="text" name="name" placeholder="域名" ng-model="host.address" required>
+                        </td>
+                        <td>
+                            <select  ng-change="unSave()" style="margin: 0;" name="group" ng-model="host.group" ng-options="k as k for (k, v) in groupNames">
+                            </select>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="javascript://" ng-click="remove(groups,host)" title="删除" class="btn btn-mini"><i class="icon-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

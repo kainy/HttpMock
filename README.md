@@ -9,7 +9,7 @@
 支持设置自定义header,设置请求的延迟,用js写简单的服务端逻辑,快速拖动文件/文件夹来创建http服务,查看http日记,调试手机的http请求.  
 目前支持windows系统.没水果电脑,没办法生成水果版本.
 ###启动软件  
-一, **打包好的Windows EXE**: [v0.2.2release](http://pan.baidu.com/s/107of0)  
+一, **打包好的**: [HttpMock.exe【Win】](http://pan.baidu.com/s/107of0)  ；[HttpMock.app【Mac】](http://pan.baidu.com/s/1i34xefz)
 二, **开发**  
 1. 下载源代码  
 2. 下载[node-webkit压缩包](https://github.com/rogerwang/node-webkit)  
